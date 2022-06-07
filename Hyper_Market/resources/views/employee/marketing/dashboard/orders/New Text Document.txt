@@ -1,0 +1,21 @@
+ orders.id as orderid ,
+products.name_en as product_name ,
+ users.name as username , 
+orders.status as statusOrder ,
+ orders.total_price as price
+
+
+
+
+
+
+
+
+select orders.id as orderid ,
+ products.name_en as product_name ,
+ users.name as username ,
+ orders.status as statusOrder , 
+orders.total_price as price 
+from `order_products` inner join `orders` on `order_products`.`order_id` = `orders`.`id`
+ inner join `users` on `order_products`.`user_id` = `users`.`id` 
+inner join `products` on `order_products`.`product_id` = `products`.`id` 
